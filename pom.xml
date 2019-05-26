@@ -27,6 +27,13 @@
 
 
   <dependencies>
+
+	  <!--分页 -->
+	  <dependency>
+		  <groupId>com.github.pagehelper</groupId>
+		  <artifactId>pagehelper</artifactId>
+		  <version>5.1.8</version>
+	  </dependency>
 	  <dependency>
 		  <groupId>tk.mybatis</groupId>
 		  <artifactId>mapper</artifactId>
