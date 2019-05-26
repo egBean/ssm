@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	private PeopleMapper peopleMapper;
 
-	private static final Logger logger = LoggerFactory.getLogger("userLog");
+	private static final Logger logger = LoggerFactory.getLogger("");//空字符串会默认传到root logger上去。
 	
 	@RequestMapping("/test")
 	public String test() {
@@ -34,6 +34,7 @@ public class UserController {
 	    list.forEach(p ->{
 			System.out.println(JSON.toJSONString(p));
 		});
+	    logger.debug("loggiii");
 		return "hello";
 
 	}
