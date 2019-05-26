@@ -28,6 +28,37 @@
 
   <dependencies>
 
+	  <dependency>
+		  <groupId>org.apache.commons</groupId>
+		  <artifactId>commons-lang3</artifactId>
+		  <version>3.9</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.junit.jupiter</groupId>
+		  <artifactId>junit-jupiter-api</artifactId>
+		  <version>RELEASE</version>
+		  <scope>compile</scope>
+	  </dependency>
+	  <!--lucene -->
+	  <dependency>
+		  <groupId>org.apache.lucene</groupId>
+		  <artifactId>lucene-core</artifactId>
+		  <version>8.1.0</version>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.apache.lucene</groupId>
+		  <artifactId>lucene-analyzers-common</artifactId>
+		  <version>8.1.0</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.apache.lucene</groupId>
+		  <artifactId>lucene-queryparser</artifactId>
+		  <version>8.1.0</version>
+	  </dependency>
+
+
 	  <!--分页 -->
 	  <dependency>
 		  <groupId>com.github.pagehelper</groupId>
@@ -45,7 +76,7 @@
 	  <dependency>
 		  <groupId>mysql</groupId>
 		  <artifactId>mysql-connector-java</artifactId>
-		  <version>8.0.13</version>
+		  <version>8.0.16</version>
 	  </dependency>
   	<dependency>
 	    <groupId>org.springframework</groupId>
@@ -75,7 +106,7 @@
 	<dependency>
 	    <groupId>com.alibaba</groupId>
 	    <artifactId>fastjson</artifactId>
-	    <version>1.2.54</version>
+	    <version>1.2.58</version>
 	</dependency>
 	
 	<dependency>
