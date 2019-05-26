@@ -3,34 +3,55 @@
   <groupId>cn.eg</groupId>
   <artifactId>ssm</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
     <packaging>war</packaging>
-  
+	<properties>
+		<!-- ${basedir}引用工程根目录 -->
+		<!-- targetJavaProject：声明存放源码的根目录 -->
+		<targetJavaProject>${basedir}/src/main/java</targetJavaProject>
+
+		<!-- targetMapperPackage：声明MBG生成XxxMapper接口后存放的package位置 -->
+		<targetMapperPackage>cn.eg.mapper</targetMapperPackage>
+
+		<!-- targetModelPackage：声明MBG生成实体类后存放的package位置 -->
+		<targetModelPackage>cn.eg.entity</targetModelPackage>
+
+		<!-- targetResourcesProject：声明存放XML的根目录位置 -->
+		<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
+
+		<!-- targetXMLPackage：声明存放具体XxxMapper.xml文件的目录位置 -->
+		<targetXMLPackage>mappers</targetXMLPackage>
+
+	</properties>
+
+
+
   <dependencies>
+	  <dependency>
+		  <groupId>tk.mybatis</groupId>
+		  <artifactId>mapper</artifactId>
+		  <version>4.1.5</version>
+	  </dependency>
+
+
+
+	  <dependency>
+		  <groupId>mysql</groupId>
+		  <artifactId>mysql-connector-java</artifactId>
+		  <version>8.0.13</version>
+	  </dependency>
   	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-webmvc</artifactId>
 	    <version>5.1.4.RELEASE</version>
 	</dependency>
-	
-	
-	
-	<dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
-	    <version>8.0.13</version>
-	</dependency>
+
+	  <dependency>
+		  <groupId>org.mybatis.generator</groupId>
+		  <artifactId>mybatis-generator-core</artifactId>
+		  <version>1.3.7</version>
+	  </dependency>
+
 	
 	<dependency>
 	    <groupId>org.mybatis</groupId>
@@ -83,14 +104,73 @@
 	    <version>1.3.2</version>
 	</dependency>
 	
-	<dependency>
-	    <groupId>org.apache.logging.log4j</groupId>
-	    <artifactId>log4j-core</artifactId>
-	    <version>2.11.1</version>
-	</dependency>
-	
-	
-  
-  
+
+
+	  <dependency>
+		  <groupId>javax.persistence</groupId>
+		  <artifactId>javax.persistence-api</artifactId>
+		  <version>2.2</version>
+	  </dependency>
+	  <dependency>
+		  <groupId>ch.qos.logback</groupId>
+		  <artifactId>logback-classic</artifactId>
+		  <version>1.2.3</version>
+		  <!--<scope>test</scope>-->
+	  </dependency>
+
+
+	  <dependency>
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-api</artifactId>
+		  <version>1.7.26</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.logback-extensions</groupId>
+		  <artifactId>logback-ext-spring</artifactId>
+		  <version>0.1.5</version>
+	  </dependency>
+	  <!--<dependency>
+		  <groupId>ch.qos.logback</groupId>
+		  <artifactId>logback-access</artifactId>
+		  <version>1.2.3</version>
+	  </dependency>-->
+
   </dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.7</version>
+				<!-- 配置generatorConfig.xml配置文件的路径 -->
+				<configuration>
+					<configurationFile>${basedir}/src/main/resources/mbg.xml</configurationFile>
+					<overwrite>true</overwrite>
+					<verbose>true</verbose>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>tk.mybatis</groupId>
+						<artifactId>mapper</artifactId>
+						<version>4.1.5</version>
+					</dependency>
+
+
+
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>8.0.13</version>
+					</dependency>
+
+				</dependencies>
+
+			</plugin>
+
+		</plugins>
+
+	</build>
 </project>

@@ -1,9 +1,7 @@
 package cn.eg.mapper;
 
-import java.util.List;
-
 import cn.eg.entity.People;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface PeopleMapper {
-	public List<People> selectAll();
+public interface PeopleMapper extends Mapper<People> {
 }

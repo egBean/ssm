@@ -1,38 +1,80 @@
 package cn.eg.entity;
 
-public class People {
-	private String name;
-	private int id;
-	private int age;
-	private long version;
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public long getVersion() {
-		return version;
-	}
-	public void setVersion(long version) {
-		this.version = version;
-	}
-	@Override
-	public String toString() {
-		return "People [name=" + name + ", id=" + id + ", age=" + age + ", version=" + version + "]";
-	}
-	
-	
+import java.io.Serializable;
+import javax.persistence.*;
+
+public class People implements Serializable {
+    @Id
+    private Long id;
+
+    private String name;
+
+    private Integer age;
+
+    /**
+     * 版本号
+     */
+    private Integer version;
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * @return id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return age
+     */
+    public Integer getAge() {
+        return age;
+    }
+
+    /**
+     * @param age
+     */
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    /**
+     * 获取版本号
+     *
+     * @return version - 版本号
+     */
+    public Integer getVersion() {
+        return version;
+    }
+
+    /**
+     * 设置版本号
+     *
+     * @param version 版本号
+     */
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 }
