@@ -2,9 +2,8 @@ package cn.eg.service;
 
 import java.util.List;
 
-import cn.eg.entity.People;
-import cn.eg.entity.User;
+import cn.eg.entity.TbUser;
 
 public interface UserService {
-	public List<User> findAll();
+	public List<TbUser> findAll();
 }

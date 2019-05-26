@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import cn.eg.entity.User;
+import cn.eg.entity.TbUser;
 import org.springframework.stereotype.Service;
 
 import cn.eg.mapper.PeopleMapper;
@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService{
 
 
 	@Override
-	public List<User> findAll() {
+	public List<TbUser> findAll() {
 		return null;
 	}
 }
