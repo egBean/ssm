@@ -1,0 +1,4 @@
+*.idea
+/target/
+/ssm.iml
+/src/test/
